@@ -25,8 +25,9 @@ public class AppMain {
         //logger.setLevel(Level.ERROR);
 
         Main camelmain = new Main();
-        camelmain.addRouteBuilder(new FileRouteBuilder());
-        camelmain.addRouteBuilder(new RESTRouteBuilder());
+        //camelmain.addRouteBuilder(new FileRouteBuilder());
+        //camelmain.addRouteBuilder(new RESTRouteBuilder());
+        camelmain.addRouteBuilder(new EnrichTestRoute1());
 
         try {
             camelmain.run(args);
