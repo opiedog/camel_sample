@@ -1,6 +1,9 @@
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.rest.RestBindingMode;
+import org.apache.camel.model.rest.RestParamType;
 
+// Read
+// https://www.programcreek.com/java-api-examples/?api=org.apache.camel.model.rest.RestBindingMode
 public class HttpEndpointRoute extends RouteBuilder {
     public void configure() {
         // https://camel.apache.org/manual/latest/rest-dsl.html
@@ -12,17 +15,26 @@ public class HttpEndpointRoute extends RouteBuilder {
                 .port(portNum)
                 //.bindingMode(RestBindingMode.auto)
                 .bindingMode(RestBindingMode.json)
+                //.dataFormatProperty("prettyPrint", "true")
                 ;
 
         // use the rest DSL to define the rest services
         // Call this route like this:
         //      http://localhost:8080/users?id=123&name=myname
-        rest("/users/")
+        rest("/users")
                 //.get("/{id}/{name}")
+                //.produces("application/json")
+                .consumes("application/json").produces("application/json")
+
                 .get()
                 //.post()
-                .type(UserPojo.class)
+
+                //.param().name("id").type(RestParamType.path).dataType("int").endParam()
+                //.param().name("name").type(RestParamType.path).dataType("String").endParam()
+
+                //.type(UserPojo.class)
                 .outType(UserPojo.class)
+
                 //.to("direct:newUser")
                 .to("bean:UserPojo?method=process")
                 //.to("stream:out")
