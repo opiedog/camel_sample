@@ -18,15 +18,9 @@ public class AppMain {
 
         BasicConfigurator.configure();
 
-        String logsource = "com.camel_sample";
-        //logsource = "AppMain.main";
-
-        //Logger logger = Logger.getLogger(logsource);
-        //logger.setLevel(Level.ERROR);
-
         Main camelmain = new Main();
-        //camelmain.addRouteBuilder(new FileRouteBuilder());
-        //camelmain.addRouteBuilder(new RESTRouteBuilder());
+        camelmain.addRouteBuilder(new FileRouteBuilder());
+        camelmain.addRouteBuilder(new RESTRouteBuilder());
         camelmain.addRouteBuilder(new EnrichTestRoute1());
 
         try {
