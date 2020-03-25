@@ -14,14 +14,16 @@ import org.apache.log4j.BasicConfigurator;
 
 public class AppMain {
     public static void main(String[] args) {
-        System.out.println("Hello world");
+        System.out.println("main - creating routes");
 
         BasicConfigurator.configure();
 
         Main camelmain = new Main();
-        camelmain.addRouteBuilder(new FileRouteBuilder());
-        camelmain.addRouteBuilder(new RESTRouteBuilder());
-        camelmain.addRouteBuilder(new EnrichTestRoute1());
+        //camelmain.addRouteBuilder(new FileRouteBuilder());
+        //camelmain.addRouteBuilder(new RESTRouteBuilder());
+        //camelmain.addRouteBuilder(new EnrichTestRoute1());
+        camelmain.addRouteBuilder(new HttpEndpointRoute());
+        camelmain.addRouteBuilder(new NewUserRoute());
 
         try {
             camelmain.run(args);
