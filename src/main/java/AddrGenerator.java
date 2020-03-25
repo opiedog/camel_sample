@@ -60,6 +60,15 @@ public class AddrGenerator implements java.io.Serializable {
 
     //
     public void acceptSSResponse(String body, Exchange exchange) {
+        //
+        // The incoming body is a string value of a json array:
+        //  e.g. "[{'prop': 'something', 'val':123}]"
+        // To parse it, I think the only solution is to create a java class
+        // of what SmartyStreets sends. That's one big object so I'm not
+        // going to waste time on it. (Experimenting with this is what
+        // all the stuff below is.)
+        // For now, I'll just print it.
+
         System.out.println("acceptSSResponse: body = '" + body + "'");
 
 //        body = "{\"phonetype\":\"N95\",\"cat\":\"WP\"}";
