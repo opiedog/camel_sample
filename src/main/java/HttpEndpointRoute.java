@@ -24,7 +24,7 @@ public class HttpEndpointRoute extends RouteBuilder {
         rest("/users")
                 //.get("/{id}/{name}")
                 //.produces("application/json")
-                .consumes("application/json").produces("application/json")
+                //.consumes("application/json").produces("application/json")
 
                 .get()
                 //.post()
@@ -33,7 +33,7 @@ public class HttpEndpointRoute extends RouteBuilder {
                 //.param().name("name").type(RestParamType.path).dataType("String").endParam()
 
                 //.type(UserPojo.class)
-                .outType(UserPojo.class)
+                //.outType(UserPojo.class)
 
                 //.to("direct:newUser")
                 .to("bean:UserPojo?method=process")
