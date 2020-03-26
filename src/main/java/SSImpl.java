@@ -71,9 +71,9 @@ public class SSImpl implements java.io.Serializable {
         System.out.println("handleResponse: body = '" + body + "'");
 
         /**
-         //        body = "{\"phonetype\":\"N95\",\"cat\":\"WP\"}";
-         //        JSONObject json = new JSONObject(body);
-         //        String x = json.getString("phonetype");
+        //        body = "{\"phonetype\":\"N95\",\"cat\":\"WP\"}";
+        //        JSONObject json = new JSONObject(body);
+        //        String x = json.getString("phonetype");
         public class Person {
             public String name;
             public Integer age;
