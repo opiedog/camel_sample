@@ -18,7 +18,7 @@ public class UserPojo {
     }
 
     //
-    public void process(Exchange exchange) {
+    public void process(String body, Exchange exchange) {
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~ UserPojo - process called ~~~~~~~~~~~~~~~~~~~~~~~~~");
 
         String sId = (String) exchange.getIn().getHeader("id");

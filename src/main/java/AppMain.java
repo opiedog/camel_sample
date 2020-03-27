@@ -19,11 +19,12 @@ public class AppMain {
         BasicConfigurator.configure();
 
         Main camelmain = new Main();
-        camelmain.addRouteBuilder(new FileRouteBuilder());
-        camelmain.addRouteBuilder(new RESTRouteBuilder());
-        camelmain.addRouteBuilder(new EnrichTestRoute1());
-        camelmain.addRouteBuilder(new HttpEndpointRoute());
-        camelmain.addRouteBuilder(new NewUserRoute());
+//        camelmain.addRouteBuilder(new FileRouteBuilder());
+//        camelmain.addRouteBuilder(new RESTRouteBuilder());
+//        camelmain.addRouteBuilder(new EnrichTestRoute1());
+//        camelmain.addRouteBuilder(new HttpEndpointRoute());
+        camelmain.addRouteBuilder(new HttpPostEndpointRoute());
+//        camelmain.addRouteBuilder(new NewUserRoute());
 
         try {
             camelmain.run(args);
